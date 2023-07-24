@@ -1,0 +1,27 @@
+<div class="country-selector-component" *ngIf="countries">
+    <div class="country-selector-component__wrapper">
+        <div class="search-bar">
+            <div class="search-bar-img-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/1200px-Magnifying_glass_icon.svg.png" alt="Magnifying glass icon">
+            </div>
+            <div class="search-bar-input">
+                <input type="text" name="name" placeholder="Germany" (keyup)="inputChange($event)" (click)="inputClick()" (mouseout)="mouseOut()">
+
+            </div>
+        </div>
+        <div class="search-bar-list">
+            <!-- search bar item -->
+            <div class="search-bar-list-item" *ngFor="let country of countries">
+                <div class="search-bar-img-box">
+                    <img  [src] = country.image  [alt] = country.name>
+                </div>
+                <div class="search-bar-list-item__name">
+                    {{ country.name }}
+                </div>
+                <div class="search-bar-list-item__code">
+                    (+ {{ country.code }} )
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
