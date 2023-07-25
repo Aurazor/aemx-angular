@@ -2,11 +2,8 @@ package com.adobe.aem.guides.wknd.spa.angular.core.service;
 
 import org.osgi.annotation.versioning.ProviderType;
 
-import java.io.IOException;
-
 @ProviderType
-public interface ApiService {
-    String getDummyResponse();
-    String getResponseV2() ;
+public interface ObjectMapperService {
+    <T> T deserialize(String json, Class<T> valueType) throws Exception;
 
 }
